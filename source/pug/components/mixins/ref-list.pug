@@ -1,0 +1,6 @@
+mixin ref-list(data)
+  ul.ref-list&attributes(attributes)
+    each item in data
+      li.ref-list__item
+        +link(item).ref-list__link
+

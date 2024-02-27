@@ -1,0 +1,26 @@
+.link {
+  transition: color $trans-default;
+  font-size: 13px;
+  line-height: 1.2;
+
+  &:is(a) {
+    @include hover-focus {
+      color: $color-summer-sky-darkest;
+
+      svg {
+        color: $color-default-white;
+      }
+    }
+  }
+
+  &.is-active {
+    color: $color-summer-sky;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: color $trans-default;
+    color: $color-summer-sky-darkest;
+  }
+}

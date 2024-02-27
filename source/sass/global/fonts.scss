@@ -16,3 +16,47 @@
   font-display: swap;
   src: url("../fonts/.woff2") format("woff2");
 }
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Lato";
+
+  font-display: swap;
+  src:
+    url("../fonts/lato-regular.woff2") format("woff2"),
+    url("../fonts/lato-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Lato";
+
+  font-display: swap;
+  src:
+    url("../fonts/lato-semibold.woff2") format("woff2"),
+    url("../fonts/lato-semibold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Lato";
+
+  font-display: swap;
+  src:
+    url("../fonts/lato-bold.woff2") format("woff2"),
+    url("../fonts/lato-bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Raleway";
+
+  font-display: swap;
+  src:
+    url("../fonts/raleway-extra-bold.woff2") format("woff2"),
+    url("../fonts/raleway-extra-bold.woff") format("woff");
+}

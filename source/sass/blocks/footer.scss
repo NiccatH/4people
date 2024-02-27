@@ -1,5 +1,105 @@
 .footer {
-  padding: 40px 0;
+  padding: 30px 0;
+  background-color: $color-blue-zodiac;
 
-  background-color: $color-neon-blue;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 0.66fr 1fr 0.66fr;
+    gap: 19px 38px;
+
+    @include vp-1279 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include vp-1023 {
+      gap: 19px;
+    }
+
+    @include vp-767 {
+      gap: 38px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__copyright {
+    color: $color-default-white;
+    font-size: 13px;
+    line-height: 1.2;
+    margin: 0;
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    @include vp-767 {
+      grid-column: auto;
+      grid-row: auto;
+      text-align: center;
+    }
+  }
+
+  &__cell {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include vp-1023 {
+      flex-direction: column;
+    }
+
+    &:nth-child(4n+1) {
+      justify-content: center;
+
+      @include vp-1023 {
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        background-color: $color-silver-lighter;
+        width: 1px;
+        height: 18px;
+
+        @include vp-767 {
+          display: none;
+        }
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+
+    &:nth-child(4n+2) {
+      justify-content: flex-end;
+
+      @include vp-1023 {
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+    }
+
+    &:nth-child(4n+3) {
+      justify-content: flex-start;
+
+      @include vp-1023 {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
+
+    &:nth-child(1n) {
+      @include vp-767 {
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+  }
 }

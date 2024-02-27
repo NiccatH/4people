@@ -1,3 +1,55 @@
 mixin footer(footerMods)
+  -
+    const listOne = [
+      {
+        icon: {
+          name: "icon-qiwi",
+          width: 20,
+          height: 20,
+        },
+        text: "QIWI&nbsp;wallet",
+      },
+      {
+        icon: {
+          name: "icon-ya-money",
+          width: 20,
+          height: 20,
+        },
+        text: "Yandex&nbsp;Money",
+      },
+      {
+        icon: {
+          name: "icon-web-money",
+          width: 20,
+          height: 20,
+        },
+        text: "Web&nbsp;Money",
+      },
+    ]
+
+    const listTwo = [
+      {
+        icon: {
+          name: "icon-message",
+          width: 20,
+          height: 20,
+        },
+        text: "info@ipsum228.com",
+        href: "#",
+      },
+      {
+        icon: {
+          name: "icon-vk",
+          width: 20,
+          height: 20,
+        },
+        text: "Мы&nbsp;вконтакте",
+        href: "#",
+      },
+    ]
   footer.footer(class=footerMods)
     .container
+      .footer__wrapper
+        +ref-list(listOne).ref-list--grey-text.footer__cell
+        +ref-list(listTwo).footer__cell
+        p.footer__copyright.footer__cell © 2018 «LOREMIPSUM.NET» Все права защищены.
