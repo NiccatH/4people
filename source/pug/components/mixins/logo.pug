@@ -1,0 +1,8 @@
+mixin logo(options={})
+  - const tag = options.isLink ? "a" : "span";
+  - const href = options.isLink ? "index.html" : false;
+  - const label = options.isLink ? "Перейти на главную": false;
+  - const logoMods = options.logoMods?.map((mod) => `logo--${mod}`) || false
+
+  #{tag}.logo(href=href aria-label=label class= logoMods)&attributes(attributes)
+    +icon("icon-logo", 245, 21)

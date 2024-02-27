@@ -1,0 +1,17 @@
+mixin link(options = {}, activeState)
+  - const tag = options.href && !activeState ? "a" : "span"
+  - const classMods = options.classMods?.map((mod) => `link--${mod}`) || false
+  - const href = options.href || false
+  - const text = options.text || ""
+  - const target = options.isExternal ? "_blank" : false
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false
+  - const icon = options.icon || false
+  - const {name, width, height} = icon || false
+
+  #{tag}.link(class=classMods, href=href, target=target, rel=rel)&attributes(attributes)
+    if (icon)
+      +icon(name, width, height)
+      span!= text
+
+    else
+      != text

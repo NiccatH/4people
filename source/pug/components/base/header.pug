@@ -3,34 +3,37 @@ mixin header(headerMods, currentUrl)
     const headerLinks = [
       {
         href: "index.html",
-        text: "Главная"
+        text: "Бизнес",
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "О нас",
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Цены",
+      },
+      {
+        href: "#",
+        text: "Оформить заказ",
       },
     ]
 
-  header.header(class=headerMods)
+  header.header(class=headerMods, data-header="sticky")
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active= link.text
-                else
-                  a.main-nav__link(href=link.href)= link.text
+      .header__wrapper
+        if(currentUrl === "index.html")
+          +logo().header__logo
+        else
+          +logo({isLink:true}).header__logo
+        nav.main-nav.header__nav
+          .main-nav__wrapper(data-close-menu)
+            ul.main-nav__list(data-scroll-lock-scrollable)
+              each link in headerLinks
+                - const activeState = currentUrl === link.href
+                li.main-nav__item
+                  if(activeState)
+                    +link(link, activeState).is-active.main-nav__link
+                  else
+                    +link(link)(data-close-menu).main-nav__link
+        +burger().header__nav-toggle

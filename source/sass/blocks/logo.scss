@@ -1,0 +1,25 @@
+.logo {
+  color: $color-default-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 0;
+  transition: color $trans-default;
+
+  &:link {
+    @include hover-focus {
+      color: $color-summer-sky-darker;
+    }
+  }
+
+  svg {
+    width: 245px;
+    height: 21px;
+
+    @include vp-767 {
+      width: 196px;
+      height: 16.8px;
+    }
+  }
+}
+

@@ -4,7 +4,7 @@ block variables
   - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
-  - const headerMods = ""
+  - const headerMods = "header--sticky"
   - const hasFooter = true
   - const footerMods = ""
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
@@ -13,6 +13,11 @@ block main
   main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
+    +intro()
+    +intro()
+    +intro()
+    +intro()
+    +intro()
     +intro()
 
 block modals
