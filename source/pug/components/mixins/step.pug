@@ -1,0 +1,5 @@
+mixin step(data)
+  .step
+    .step__figure
+      +icon(data.name, data.width, data.height)
+    p.step__text!= data.text

@@ -1,0 +1,49 @@
+mixin order()
+  -
+    const steps = [
+      {
+        text: "Lorem ipsum dolorsit amet",
+        name: "icon-search",
+        width: 55,
+        height: 55,
+      },
+      {
+        text: "Сonsecteturadipiscing elit",
+        name: "icon-percent",
+        width: 55,
+        height: 55,
+      },
+      {
+        text: "Sed do eiusmod tempor",
+        name: "icon-file",
+        width: 55,
+        height: 55,
+      },
+      {
+        text: "Esse cillum dolore eu fugiat",
+        name: "icon-message",
+        width: 55,
+        height: 55,
+      },
+      {
+        text: "Excepteur sint occaecat cupidatat non proident",
+        name: "icon-money",
+        width: 55,
+        height: 55,
+      },
+    ]
+  section.order
+    .order__background
+      +img("content", "world-map-decor", "png", 1920, 920, "world map")
+    .container
+      .order__wrapper
+        .order__title
+          h2
+            | Оформление
+            b  Заказа
+          p Перед заполнением формы ознакомьтесь с нашей схемой работы!
+        ul.order__steps
+          each step in steps
+            li.order__step
+              +step(step)
+
