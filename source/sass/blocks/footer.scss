@@ -4,7 +4,7 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: 0.66fr 1fr 0.66fr;
+    grid-template-columns: 0.75fr 1fr 0.75fr;
     gap: 19px 38px;
 
     @include vp-1279 {
@@ -46,38 +46,16 @@
       flex-direction: column;
     }
 
-    &:nth-child(4n+1) {
+    &:nth-of-type(3n+1):not(.footer__copyright) {
       justify-content: center;
 
       @include vp-1023 {
         align-items: center;
         justify-content: flex-start;
       }
-
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
-        top: 0;
-        background-color: $color-silver-lighter;
-        width: 1px;
-        height: 18px;
-
-        @include vp-767 {
-          display: none;
-        }
-      }
-
-      &::before {
-        left: 0;
-      }
-
-      &::after {
-        right: 0;
-      }
     }
 
-    &:nth-child(4n+2) {
+    &:nth-of-type(3n+2) {
       justify-content: flex-end;
 
       @include vp-1023 {
@@ -86,12 +64,32 @@
       }
     }
 
-    &:nth-child(4n+3) {
+    &:nth-of-type(3n+3) {
       justify-content: flex-start;
 
       @include vp-1023 {
         align-items: flex-start;
         justify-content: flex-start;
+      }
+    }
+
+    &:not(:nth-of-type(3n+2)) {
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        background-color: $color-silver-lighter;
+        width: 1px;
+        height: 18px;
+        right: -19px;
+
+        @include vp-1023 {
+          right: -9.5px;
+        }
+
+        @include vp-767 {
+          display: none;
+        }
       }
     }
 
