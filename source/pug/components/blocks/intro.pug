@@ -1,10 +1,37 @@
 mixin intro()
-  .intro
-    //- вставлять блоки во внешний контейнер неверно
-    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+  -
+    const list = [
+      {
+        text: "Totam rem aperiam eaque ipsa",
+      },
+      {
+        text: "Sit voluptatem accusantium doloremque laudantium",
+      },
+      {
+        text: "Sed ut perspiciatis, unde omnis iste natus error",
+      },
+    ]
+  section.intro
+    .intro__background
+      +img("content", "intro", "jpg", 1919, 850, "test")
     .container
-      p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
+      .intro__wrapper
+        h1
+          b Lorem ipsum
+          |   dolor sit ametconsectetur
+          b  adipiscing
+        .intro__advantages
+          p At vero eos et accusamus et iusto odio dignissimos ducimus!
+          ul.intro__list
+            each item in list
+              li.intro__list-item!= item.text
+        .intro__buttons
+          +btn({
+            text: "заказать",
+            classMods: ["blue"],
+          }).intro__btn
+          +btn({
+            text: "подробнее",
+            classMods: ["white"],
+          }).intro__btn
 
-      p(style="margin-top: 40px;") Пример использования +img()
-      p(style="margin-bottom: 40px;")
-        +img("content", "placeholder", "png", 120, 120, "Пример")
