@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>ProjectName</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header header--sticky" data-header="sticky">
+        <div class="container">
+          <div class="header__wrapper">
+            <span class="logo header__logo">
+              <svg width="245" height="21" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#icon-logo"></use>
+              </svg>
+            </span>
+            <nav class="main-nav header__nav">
+              <div class="main-nav__wrapper" data-close-menu>
+                <ul class="main-nav__list" data-scroll-lock-scrollable>
+                  <li class="main-nav__item"><span class="link is-active main-nav__link">Бизнес</span>
+                  </li>
+                  <li class="main-nav__item"><a class="link main-nav__link" data-close-menu href="#">О нас</a>
+                  </li>
+                  <li class="main-nav__item"><a class="link main-nav__link" data-close-menu href="#">Цены</a>
+                  </li>
+                  <li class="main-nav__item"><a class="link main-nav__link" data-close-menu href="#">Оформить заказ</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <button class="burger header__nav-toggle" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger><span class="burger__top-line"></span><span class="burger__middle-line"></span><span class="burger__bottom-line"></span></button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="intro">
+          <div class="intro__background"><img src="img/content/intro.jpg" srcset="img/content/intro@2x.jpg 2x" width="1919" height="850" alt="test">
+          </div>
+          <div class="container">
+            <div class="intro__wrapper">
+              <h1><b>Lorem ipsum</b>  dolor sit ametconsectetur<b> adipiscing</b></h1>
+              <div class="intro__advantages">
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus!</p>
+                <ul class="intro__list">
+                  <li class="intro__list-item">Totam rem aperiam eaque ipsa</li>
+                  <li class="intro__list-item">Sit voluptatem accusantium doloremque laudantium</li>
+                  <li class="intro__list-item">Sed ut perspiciatis, unde omnis iste natus error</li>
+                </ul>
+              </div>
+              <div class="intro__buttons">
+                <button class="btn btn--blue intro__btn" type="button">заказать
+                </button>
+                <button class="btn btn--white intro__btn" type="button">подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="order">
+          <div class="order__background"><img src="img/content/world-map-decor.png" srcset="img/content/world-map-decor@2x.png 2x" width="1920" height="920" alt="world map">
+          </div>
+          <div class="container">
+            <div class="order__wrapper">
+              <div class="order__title">
+                <h2>Оформление<b> Заказа</b></h2>
+                <p>Перед заполнением формы ознакомьтесь с нашей схемой работы!</p>
+              </div>
+              <ul class="order__steps">
+                <li class="order__step">
+                  <div class="step">
+                    <div class="step__figure">
+                      <svg width="55" height="55" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-search"></use>
+                      </svg>
+                    </div>
+                    <p class="step__text">Lorem ipsum dolorsit amet</p>
+                  </div>
+                </li>
+                <li class="order__step">
+                  <div class="step">
+                    <div class="step__figure">
+                      <svg width="55" height="55" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-percent"></use>
+                      </svg>
+                    </div>
+                    <p class="step__text">Сonsecteturadipiscing elit</p>
+                  </div>
+                </li>
+                <li class="order__step">
+                  <div class="step">
+                    <div class="step__figure">
+                      <svg width="55" height="55" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-file"></use>
+                      </svg>
+                    </div>
+                    <p class="step__text">Sed do eiusmod tempor</p>
+                  </div>
+                </li>
+                <li class="order__step">
+                  <div class="step">
+                    <div class="step__figure">
+                      <svg width="55" height="55" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-message"></use>
+                      </svg>
+                    </div>
+                    <p class="step__text">Esse cillum dolore eu fugiat</p>
+                  </div>
+                </li>
+                <li class="order__step">
+                  <div class="step">
+                    <div class="step__figure">
+                      <svg width="55" height="55" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-money"></use>
+                      </svg>
+                    </div>
+                    <p class="step__text">Excepteur sint occaecat cupidatat non proident</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="form" data-form-validate data-callback="base" data-name="">
+                <form method="post" action="#">
+                  <div class="custom-select" data-select data-validate-type="select" data-name="user-select" data-id="user-select-1" data-required><span class="custom-select__placeholder">Выберите тип системы</span>
+                    <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                    <ul class="custom-select__list" role="listbox">
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">Sed ut perspiciatis</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Nemo enim ipsam</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Et harum quidem</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Temporibus autem</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Itaque earum rerum</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Sed ut perspiciatis</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-7" aria-selected="false" role="option">Nemo enim ipsam</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-8" aria-selected="false" role="option">Et harum quidem</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-9" aria-selected="false" role="option">Temporibus autem</li>
+                      <li class="custom-select__item" tabindex="0" data-select-value="id-10" aria-selected="false" role="option">Itaque earum rerum</li>
+                    </ul>
+                  </div>
+                  <div class="custom-input" data-validate-type="email" data-message-base="Укажите e-mail" data-message-extra="Укажите корректный e-mail" data-required>
+                    <label>
+                      <input type="email" name="user-mail" placeholder="Ваш e-mail">
+                    </label>
+                  </div>
+                  <div class="custom-input" data-validate-type="text" data-limitation="name" data-message-base="Укажите имя" data-required>
+                    <label>
+                      <input type="text" name="user-name" placeholder="Ваше имя">
+                    </label>
+                  </div>
+                  <div class="custom-slider form__custom-slider">
+                    <div class="custom-slider__text">
+                      <p>Sed ut perspiciatis, unde omnis iste natus</p><span class="custom-slider__value" data-range-value></span>
+                    </div>
+                    <div class="range custom-slider__range"></div>
+                    <input type="range" name="user-range" tabindex="-1" data-range-input>
+                  </div>
+                  <div class="input-upload input-upload--file" data-upload="file">
+                    <label>
+                      <input type="file" name="user-file"><span class="btn btn--white btn--icon btn--alt-border btn--semi-bold">
+                        <svg width="18" height="21" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-file-no-plus"></use>
+                        </svg>прикрепить файл</span>
+                    </label>
+                  </div>
+                  <button class="btn btn--blue btn--semi-bold form__submit" type="submit">отправить
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__wrapper">
+            <ul class="ref-list ref-list--grey-text footer__cell">
+              <li class="ref-list__item">
+                <span class="link ref-list__link">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-qiwi"></use>
+                  </svg><span>QIWI&nbsp;wallet</span>
+                </span>
+              </li>
+              <li class="ref-list__item">
+                <span class="link ref-list__link">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-ya-money"></use>
+                  </svg><span>Yandex&nbsp;Money</span>
+                </span>
+              </li>
+              <li class="ref-list__item">
+                <span class="link ref-list__link">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-web-money"></use>
+                  </svg><span>Web&nbsp;Money</span>
+                </span>
+              </li>
+            </ul>
+            <ul class="ref-list footer__cell">
+              <li class="ref-list__item">
+                <a class="link ref-list__link" href="#">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-message"></use>
+                  </svg><span>info@ipsum228.com</span>
+                </a>
+              </li>
+              <li class="ref-list__item">
+                <a class="link ref-list__link" href="#">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-vk"></use>
+                  </svg><span>Мы&nbsp;вконтакте</span>
+                </a>
+              </li>
+            </ul>
+            <p class="footer__copyright footer__cell">© 2018 «LOREMIPSUM.NET» Все права защищены.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
