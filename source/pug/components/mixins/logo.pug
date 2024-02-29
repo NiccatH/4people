@@ -4,5 +4,5 @@ mixin logo(options={})
   - const label = options.isLink ? "Перейти на главную": false;
   - const logoMods = options.logoMods?.map((mod) => `logo--${mod}`) || false
 
-  #{tag}.logo(href=href aria-label=label class= logoMods)&attributes(attributes)
+  #{tag}.logo(href=href, aria-label=label, class= logoMods)&attributes(attributes)
     +icon("icon-logo", 245, 21)

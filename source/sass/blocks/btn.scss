@@ -8,18 +8,52 @@
   padding: 15px;
   text-transform: uppercase;
 
-  transition: color $trans-default;
+  transition: color $trans-default, background-color $trans-default, box-shadow $trans-default;
 
   &--blue {
     background-color: $color-summer-sky-darkest;
     box-shadow: inset 0 0 0 1px $color-default-white;
     color: $color-default-white;
+
+    @include hover-focus {
+      color: $color-summer-sky-darkest;
+      background-color: $color-default-white;
+      box-shadow: inset 0 0 0 1px $color-summer-sky-darkest;
+    }
   }
 
   &--white {
     background-color: $color-default-white;
     box-shadow: inset 0 0 0 1px $color-dolphin;
     color: $color-black-russian;
+
+    @include hover-focus {
+      color: $color-default-white;
+      background-color: $color-summer-sky-darkest;
+    }
+  }
+
+  &--icon {
+    align-items: center;
+
+    svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 21px;
+      margin-right: 10px;
+    }
+
+    padding: 13.5px;
+    width: 100%;
+  }
+
+  &--alt-border {
+    box-shadow: inset 0 0 0 2px $color-summer-sky-darkest;
+  }
+
+  &--semi-bold {
+    font-weight: 600;
+    font-size: 15px;
   }
 
   &:disabled {

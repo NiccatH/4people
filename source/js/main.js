@@ -5,6 +5,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {Burger} from './modules/header/burger';
 import {StickyHeader} from './modules/header/sticky-header';
+import {initSlider} from './modules/slider/init-slider';
 
 // ---------------------------------
 
@@ -33,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+    initSlider();
   });
 });
 

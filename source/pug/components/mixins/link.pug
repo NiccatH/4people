@@ -1,5 +1,5 @@
-mixin link(options = {}, activeState)
-  - const tag = options.href && !activeState ? "a" : "span"
+mixin link(options = {})
+  - const tag = options.href ? "a" : "span"
   - const classMods = options.classMods?.map((mod) => `link--${mod}`) || false
   - const href = options.href || false
   - const text = options.text || ""

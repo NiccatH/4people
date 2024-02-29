@@ -4,6 +4,7 @@
 @import "vendor/normalize";
 // Swiper 8.4.7
 // @import "vendor/swiper";
+@import "vendor/nouislider";
 
 // Global
 // ---------------------------------
@@ -35,6 +36,9 @@
 @import "blocks/intro";
 @import "blocks/order";
 @import "blocks/step";
+@import "blocks/form";
+@import "blocks/range";
+@import "blocks/custom-slider";
 // ---------------------------------
 
 // ❗❗❗ запрещено использовать изображения в css, касается как jpg \ png, так и svg

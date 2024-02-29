@@ -1,0 +1,7 @@
+mixin form(options = {})
+  - const callback = options.callback ? options.callback : "base";
+  - const name = options.name ? options.name : "";
+  - const action = options.action ? options.action : "#"
+  .form(data-form-validate, data-callback= callback, data-name= name)&attributes(attributes)
+    form(method="post", action= action)
+      block
