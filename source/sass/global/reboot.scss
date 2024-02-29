@@ -56,10 +56,20 @@ textarea {
 // rgba не подойдет, сконвертируйте цвет в hex без прозрачности
 // если в стилях уже используется box-shadow есть другое решение -
 // задать к списку транзишенов `background-color 10000000s ease-out`
-input:-webkit-autofill {
-  box-shadow: inset 0 0 0 1000px $color-default-white;
+// input:-webkit-autofill {
+//   box-shadow: inset 0 0 0 1000px $color-white-opacity-85;
 
-  -webkit-text-fill-color: $color-default-black;
+//   -webkit-text-fill-color: $color-default-black;
+// }
+
+input:-webkit-autofill {
+  box-shadow: inset 0 0 0 1000px $color-white-opacity-85;
+  -webkit-text-fill-color: $color-jaguar;
+  transition: background-color 600000s 0s, color 600000s 0s;
+
+  &:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
 }
 
 // firefox placeholder \ invalid fix + ios bdrs

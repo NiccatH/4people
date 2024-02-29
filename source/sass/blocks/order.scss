@@ -1,5 +1,4 @@
 .order {
-  background-color: $color-jaguar;
   display: grid;
   grid-template-columns: 1fr;
 
@@ -10,6 +9,8 @@
     grid-row: 1 / 2;
     pointer-events: none;
     user-select: none;
+    background-color: $color-jaguar;
+    z-index: -1;
 
     &::before {
       content: "";
@@ -83,7 +84,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 30px;
-    margin-bottom: 80px;
+    margin-bottom: 85px;
 
     @include vp-767 {
       grid-template-columns: 1fr;

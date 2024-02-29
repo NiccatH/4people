@@ -1,0 +1,18 @@
+.form {
+  width: 100%;
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  &__custom-slider {
+    grid-column: 1 / 3;
+  }
+
+  &__submit {
+    grid-column: 2 / 3;
+    margin-top: 30px;
+  }
+}

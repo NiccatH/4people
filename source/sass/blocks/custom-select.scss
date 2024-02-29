@@ -1,10 +1,6 @@
 .custom-select {
   position: relative;
 
-  width: 300px;
-  padding: 14px 0 28px;
-  margin: 0 0 44px 0;
-
   @media screen and (max-width: 767px) {
     padding: 4px 0 14px;
     width: 100%;
@@ -17,7 +13,7 @@
 
     transform: translateY(-50%);
 
-    transition: transform 0.3s ease, opacity  0.3s ease;
+    transition: transform $trans-default, opacity  $trans-default;
 
     pointer-events: none;
 
@@ -30,10 +26,11 @@
     position: absolute;
     top: 50%;
     left: 10px;
+    font-size: 18px;
 
-    transform: translateY(-80%);
+    transform: translateY(-50%);
 
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform $trans-default, opacity $trans-default;
 
     pointer-events: none;
 
@@ -64,23 +61,14 @@
     align-items: center;
     width: 100%;
     height: 48px;
-    padding: 5px 10px;
-
-    background-color: rgba(255, 255, 255, 0);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    padding: 5px 15px 5px 10px;
+    background-color: $color-white-opacity-85;
+    border: 1px solid $color-default-white;
+    border-radius: 3px;
     outline: none;
     cursor: pointer;
 
     transition: border 0.3s ease;
-
-    &:hover {
-      border: 2px solid rgba(0, 0, 0, 0.5);
-    }
-
-    &:focus {
-      border: 2px solid rgba(0, 0, 0, 0.8);
-    }
 
     &:disabled {
       pointer-events: none;
@@ -90,22 +78,46 @@
 
   &__list {
     position: absolute;
-    bottom: 10px;
-    z-index: 1;
+    bottom: 2px;
+    z-index: 2;
 
     width: 100%;
-    max-height: 100px;
+    max-height: 180px;
     margin: 0;
     padding: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
 
     list-style: none;
-
-    background-color: #ffffff;
-    border: 2px solid #000000;
+    font-size: 18px;
+    color: $color-default-white;
+    background-color: $color-jaguar;
+    border-left: 1px solid #3d4050;
+    border-bottom: 1px solid #3d4050;
+    border-right: 1px solid #3d4050;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
+
+    @-moz-document url-prefix() {
+      scrollbar-color: $color-summer-sky-darkest $color-blue-zodiac-opacity-85;
+      scrollbar-width: thin;
+    }
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $color-blue-zodiac-opacity-85;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-summer-sky-darkest;
+      border-radius: 3px;
+    }
 
     transition: visibility 0.3s ease, opacity 0.3s ease;
   }
@@ -116,30 +128,17 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color 0.3s ease;
+    transition: color $trans-default, background-color $trans-default;
 
     &[aria-selected="true"] {
-      background-color: rgba(0, 0, 0, 0.2);
-
-      @media (hover: hover) {
-        &:hover:not(.focus-visible) {
-          background-color: rgba(0, 0, 0, 0.2);
-        }
-      }
-
-      &.focus-visible:focus {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
+      background-color: $color-endeavour;
     }
 
-    @media (hover: hover) {
-      &:hover:not(.focus-visible) {
-        background-color: rgba(0, 0, 0, 0.4);
+    &:not([aria-selected="true"]) {
+      @include hover-focus {
+        color: $color-summer-sky-darker;
+        background-color: $color-black-russian-opacity-90;
       }
-    }
-
-    &.focus-visible:focus {
-      background-color: rgba(0, 0, 0, 0.4);
     }
   }
 
@@ -156,8 +155,7 @@
   }
 
   &__text {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
     flex-shrink: 0;
     width: 80%;
     overflow: hidden;
@@ -168,7 +166,8 @@
 
     opacity: 0;
 
-    transition: opacity 0.3s ease 0.1s;
+    color: $color-jaguar;
+    transition: opacity $trans-default, color $trans-default;
 
     br {
       display: none;
@@ -177,11 +176,11 @@
 
   &__icon {
     flex-shrink: 0;
-    width: 20px;
-    height: 10px;
+    width: 8px;
+    height: 5px;
     margin-left: auto;
 
-    background-color: #000000;
+    background-color: $color-default-black;
 
     transition: transform 0.3s ease;
 
@@ -212,10 +211,24 @@
 
     .custom-select__icon {
       transform: rotate(180deg);
+      background-color: $color-default-white;
     }
 
     .custom-select__label {
       opacity: 0;
+    }
+
+    .custom-select__button {
+      background-color: $color-blue-zodiac-opacity-85;
+      border-color: $color-blue-zodiac;
+    }
+
+    .custom-select__placeholder {
+      color: $color-default-white;
+    }
+
+    .custom-select__text {
+      color: $color-default-white;
     }
   }
 
@@ -236,15 +249,14 @@
   &.is-invalid {
     .custom-select__error {
       opacity: 1;
+      color: red;
+      position: absolute;
+      bottom: 0;
+      font-size: 30px;
     }
 
     .custom-select__button {
-      border: 2px solid #ff1553;
-
-      &:focus,
-      &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
-      }
+      border-color: $color-torch-red;
     }
   }
 

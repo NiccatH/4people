@@ -46,4 +46,61 @@ mixin order()
           each step in steps
             li.order__step
               +step(step)
+        +form()
+          +custom-select({
+            placeholder: "Выберите тип системы",
+            error: "Выберите тип системы",
+            optionsList: [
+              {text: "Sed ut perspiciatis", value: "id-1"},
+              {text: "Nemo enim ipsam", value: "id-2"},
+              {text: "Et harum quidem", value: "id-3"},
+              {text: "Temporibus autem", value: "id-4"},
+              {text: "Itaque earum rerum", value: "id-5"},
+              {text: "Sed ut perspiciatis", value: "id-6"},
+              {text: "Nemo enim ipsam", value: "id-7"},
+              {text: "Et harum quidem", value: "id-8"},
+              {text: "Temporibus autem", value: "id-9"},
+              {text: "Itaque earum rerum", value: "id-10"},
+            ],
+          })(
+            data-select,
+            data-validate-type="select",
+            data-name="user-select",
+            data-id="user-select-1",
+            data-required,
+          )
+          +custom-input({
+            inputType: "email",
+            inputName: "user-mail",
+            inputPlaceholder: "Ваш e-mail",
+          })(
+            data-validate-type="email",
+            data-message-base="Укажите e-mail",
+            data-message-extra="Укажите корректный e-mail",
+            data-required
+          )
+          +custom-input({
+            inputType: "text",
+            inputName: "user-name",
+            inputPlaceholder: "Ваше имя",
+          })(
+            data-validate-type="text",
+            data-limitation="name",
+            data-message-base="Укажите имя",
+            data-required
+          )
+          +custom-slider().form__custom-slider
+          +input-upload({
+            inputText: "прикрепить файл",
+            icon: {
+              name: "icon-file-no-plus",
+              width: 18,
+              height: 21,
+            },
+          }).input-upload--file
+          +btn({
+            text: "отправить",
+            type: "submit",
+            classMods: ["blue", "semi-bold",],
+          }).form__submit
 

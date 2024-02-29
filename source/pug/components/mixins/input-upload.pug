@@ -1,0 +1,24 @@
+mixin input-upload(options= {})
+  - const dataUpload = options.dataUpload ? options.dataUpload : "file";
+  - const isDropZone = options.isDropZone ? options.isDropZone : false;
+  - const dropZoneText = options.dropZoneText ? options.dropZoneText : "";
+  - const inputName = options.inputName ? options.inputName : "user-file";
+  - const inputText = options.inputText ? options.inputText : "";
+  - const classMods = options.classMods?.map((mod) => `input-upload--${mod}`) || [];
+  - const icon = options.icon || false
+  - const {name, width, height} = icon || {}
+  .input-upload(data-upload= dataUpload, class= classMods)&attributes(attributes)
+    if isDropZone
+      .input-upload__drop-zone(data-drop-zone)
+        span.input-upload__drop-zone-text!= dropZoneText
+      label
+        input(type="file", name= inputName)
+        span.input-upload.btn!= inputText
+    else
+      label
+        input(type="file", name= inputName)
+        span.btn.btn--white.btn--icon.btn--alt-border.btn--semi-bold
+          if icon
+            +icon(name, width, height)
+          != inputText
+

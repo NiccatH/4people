@@ -22,6 +22,29 @@
     color: $color-black-russian;
   }
 
+  &--icon {
+    align-items: center;
+
+    svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 21px;
+      margin-right: 10px;
+    }
+
+    padding: 13.5px;
+    width: 100%;
+  }
+
+  &--alt-border {
+    box-shadow: inset 0 0 0 2px $color-summer-sky-darkest;
+  }
+
+  &--semi-bold {
+    font-weight: 600;
+    font-size: 15px;
+  }
+
   &:disabled {
     opacity: 0.5;
     pointer-events: none;
