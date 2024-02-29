@@ -19,6 +19,13 @@
 
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
+
+  @include focus {
+    & + span {
+      color: $color-default-white;
+      background-color: $color-summer-sky-darkest;
+    }
+  }
 }
 
 .input-upload__preview-item {

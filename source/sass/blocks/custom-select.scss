@@ -68,7 +68,11 @@
     outline: none;
     cursor: pointer;
 
-    transition: border 0.3s ease;
+    transition: border $trans-default, background-color $trans-default;
+
+    @include hover-focus {
+      background-color: $color-default-white;
+    }
 
     &:disabled {
       pointer-events: none;
@@ -247,29 +251,10 @@
   }
 
   &.is-invalid {
-    .custom-select__error {
-      opacity: 1;
-      color: red;
-      position: absolute;
-      bottom: 0;
-      font-size: 30px;
-    }
-
     .custom-select__button {
       border-color: $color-torch-red;
     }
   }
-
-  /* &.is-valid {
-    .custom-select__button {
-      border: 2px solid $color-eucalyptus;
-
-      &:focus,
-      &:hover {
-        border: 2px solid rgba($color-eucalyptus, 0.5);
-      }
-    }
-  } */
 
   &--placeholder {
     .custom-select__label {

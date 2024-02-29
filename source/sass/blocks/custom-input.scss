@@ -23,7 +23,11 @@
       border-radius: 3px;
       outline: none;
 
-      transition: border $trans-default;
+      transition: border $trans-default, background-color $trans-default;
+
+      @include hover {
+        background-color: $color-default-white;
+      }
 
       &::placeholder {
         color: $color-jaguar;
