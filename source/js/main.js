@@ -5,7 +5,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {Burger} from './modules/header/burger';
 import {StickyHeader} from './modules/header/sticky-header';
-import noUiSlider from './vendor/nouislider';
+import {initSlider} from './modules/slider/init-slider';
 
 // ---------------------------------
 
@@ -34,35 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
-
-    const slider = document.querySelector('.range');
-    const rangeValue = document.querySelector('[data-range-value]');
-    const rangeInput = document.querySelector('[data-range-input]');
-
-    const mySlider = noUiSlider.create(slider, {
-      start: [75],
-      connect: 'lower',
-      step: 1,
-      range: {
-        'min': 0,
-        'max': 100,
-      },
-      format: {
-        to: (value) => {
-          return Math.round(value);
-        },
-        from: (value) => {
-          return value;
-        },
-      },
-    });
-
-    mySlider.on('update', function (values, handle) {
-      const value = values[handle];
-      rangeValue.innerHTML = value + '%';
-      rangeInput.value = value;
-    });
-
+    initSlider();
   });
 });
 

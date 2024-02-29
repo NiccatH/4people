@@ -3,6 +3,5 @@ mixin form(options = {})
   - const name = options.name ? options.name : "";
   - const action = options.action ? options.action : "#"
   .form(data-form-validate, data-callback= callback, data-name= name)&attributes(attributes)
-    form(method="post" action= action)
+    form(method="post", action= action)
       block
-

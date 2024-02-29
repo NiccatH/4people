@@ -29,6 +29,10 @@
 
     p {
       margin: 0 0 15px 0;
+
+      @include vp-1023 {
+        max-width: 50%;
+      }
     }
   }
 

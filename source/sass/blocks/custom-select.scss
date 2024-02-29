@@ -1,11 +1,6 @@
 .custom-select {
   position: relative;
 
-  @media screen and (max-width: 767px) {
-    padding: 4px 0 14px;
-    width: 100%;
-  }
-
   &__label {
     position: absolute;
     top: 50%;
@@ -33,10 +28,6 @@
     transition: transform $trans-default, opacity $trans-default;
 
     pointer-events: none;
-
-    @media screen and (max-width: 767px) {
-      transform: translateY(calc(-50% - 5px));
-    }
   }
 
   select {

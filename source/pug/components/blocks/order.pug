@@ -62,33 +62,17 @@ mixin order()
               {text: "Temporibus autem", value: "id-9"},
               {text: "Itaque earum rerum", value: "id-10"},
             ],
-          })(
-            data-select,
-            data-validate-type="select",
-            data-name="user-select",
-            data-id="user-select-1",
-            data-required,
-          )
+          })(data-select, data-validate-type="select", data-name="user-select", data-id="user-select-1", data-required)
           +custom-input({
             inputType: "email",
             inputName: "user-mail",
             inputPlaceholder: "Ваш e-mail",
-          })(
-            data-validate-type="email",
-            data-message-base="Укажите e-mail",
-            data-message-extra="Укажите корректный e-mail",
-            data-required
-          )
+          })(data-validate-type="email", data-message-base="Укажите e-mail", data-message-extra="Укажите корректный e-mail", data-required)
           +custom-input({
             inputType: "text",
             inputName: "user-name",
             inputPlaceholder: "Ваше имя",
-          })(
-            data-validate-type="text",
-            data-limitation="name",
-            data-message-base="Укажите имя",
-            data-required
-          )
+          })(data-validate-type="text", data-limitation="name", data-message-base="Укажите имя", data-required)
           +custom-slider().form__custom-slider
           +input-upload({
             inputText: "прикрепить файл",
@@ -103,4 +87,3 @@ mixin order()
             type: "submit",
             classMods: ["blue", "semi-bold",],
           }).form__submit
-

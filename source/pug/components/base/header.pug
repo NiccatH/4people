@@ -33,7 +33,7 @@ mixin header(headerMods, currentUrl)
                 - const activeState = currentUrl === link.href
                 li.main-nav__item
                   if(activeState)
-                    +link(link, activeState).is-active.main-nav__link
+                    span.link.is-active.main-nav__link!= link.text
                   else
-                    +link(link)(data-close-menu).main-nav__link
+                    a.link.main-nav__link(data-close-menu, href=link.href)!= link.text
         +burger().header__nav-toggle
