@@ -1,11 +1,40 @@
 .ref-list {
-  margin: 0;
+  position: relative;
   padding: 0;
   list-style-type: none;
-  gap: 19px 38px;
+  margin: -19px 0 0 -39px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  @include vp-767 {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    margin: 0;
+
+    &::after {
+      position: absolute;
+      content: "";
+      right: 0;
+      left: 0;
+      bottom: -21px;
+      height: 1px;
+      background-color: $color-silver-lighter;
+    }
+  }
 
   &__item {
     position: relative;
+    margin: 19px 0 0 38px;
+
+    @include vp-767 {
+      margin: 0;
+
+      &:not(:first-of-type) {
+        margin: 19px 0 0 0;
+      }
+    }
   }
 
   &__link {
@@ -13,6 +42,7 @@
     grid-template-columns: 20px 1fr;
     gap: 10px;
     align-items: center;
+    word-break: break-word;
   }
 
   &--grey-text {
