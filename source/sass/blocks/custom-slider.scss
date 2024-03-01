@@ -40,4 +40,11 @@
     font-weight: 600;
     margin-left: 15px;
   }
+
+  &__range {
+    @include vp-767 {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
 }

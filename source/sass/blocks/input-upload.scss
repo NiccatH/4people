@@ -301,4 +301,8 @@
   right: 0;
   top: 110%;
   color: $color-default-white;
+
+  @include vp-767 {
+    top: 70%;
+  }
 }
