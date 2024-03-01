@@ -61,10 +61,6 @@
 
     transition: border $trans-default, background-color $trans-default;
 
-    @include hover-focus {
-      background-color: $color-default-white;
-    }
-
     &:disabled {
       pointer-events: none;
       opacity: 0.3;
@@ -195,6 +191,14 @@
       bottom: auto;
       top: 0;
       transform: translateY(calc(-100% + 10px));
+    }
+  }
+
+  &:not(.is-open) {
+    .custom-select__button {
+      @include hover-focus {
+        background-color: $color-default-white;
+      }
     }
   }
 
